@@ -22,6 +22,8 @@ public class PersonHelper {
 
     private final Random random = new Random();
 
+    private String activeMQURI;
+
     public Person createTestPerson() {
         Person person = new Person();
         if (random.nextBoolean()) {
@@ -32,6 +34,14 @@ public class PersonHelper {
             person.setAge(18);
         }
         return person;
+    }
+
+    public void logProperties() {
+        System.out.println("ActiveMQ URI: " + activeMQURI);
+    }
+
+    public void setActiveMQURI(String activeMQURI) {
+        this.activeMQURI = activeMQURI;
     }
 
 }
